@@ -19,7 +19,6 @@ Sub_metering_2 <- as.numeric(data$V8)
 Sub_metering_3 <- as.numeric(data$V9)
 datetime <- paste(data$V1,data$V2)
 datetime <- as.POSIXct(strptime(datetime,"%d/%m/%Y %H:%M:%S"))
-
 png("plot4.png")
 par(mfrow=c(2, 2))
 #plot1
@@ -28,11 +27,9 @@ plot(datetime, Global_active_power,
      xlab = "", 
      ylab="Global Active Power"
 )
-
 #plot2
 plot(datetime, Voltage,
      type="l")
-
 #plot3
 plot(datetime, Sub_metering_1, 
      type="l", 
@@ -47,7 +44,6 @@ legend("topright",
        lty=1,
        bty="n"   
 )
-
 #plot4
 plot(datetime, Global_reactive_power,
      type="l")
